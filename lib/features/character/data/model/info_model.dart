@@ -7,9 +7,13 @@ part 'info_model.g.dart';
 @freezed
 abstract class InfoModel with _$InfoModel {
   const factory InfoModel({
+    /// El número total de personajes.
     required int count,
+    /// El número total de páginas.
     required int pages,
+    /// URL de la siguiente página (si existe).
     String? next,
+    /// URL de la página anterior (si existe).
     String? prev,
   }) = _InfoModel;
 

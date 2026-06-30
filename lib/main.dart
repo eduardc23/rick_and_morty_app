@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'core/constants/app_constants.dart';
 import 'core/network/retry/app_retry_policy.dart';
 import 'features/character/presentation/character_list/character_list_screen.dart';
 
@@ -24,12 +25,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         fontFamily: 'Roboto',
-        colorSchemeSeed: const Color(0xFF34C759),
+        colorSchemeSeed: AppColors.seed,
         brightness: Brightness.light,
-        scaffoldBackgroundColor: const Color(0xFFEFF6EC),
+        scaffoldBackgroundColor: AppColors.background,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFFEFF6EC),
-          elevation: 0,
+          backgroundColor: AppColors.background,
+          elevation: AppDesignValues.elevationNone,
           centerTitle: true,
         ),
       ),

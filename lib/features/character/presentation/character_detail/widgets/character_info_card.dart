@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/constants/app_constants.dart';
+import '../../../domain/entities/enums/character_gender.dart';
+import '../../../domain/entities/enums/character_species.dart';
+import '../../../domain/entities/value_objects/character_id.dart';
 import 'character_info_row.dart';
 
 class CharacterInfoCard extends StatelessWidget {
@@ -12,17 +15,17 @@ class CharacterInfoCard extends StatelessWidget {
     required this.id,
   });
 
-  final String species;
-  final String gender;
+  final CharacterSpecies species;
+  final CharacterGender gender;
   final String origin;
   final String location;
-  final int id;
+  final CharacterId id;
 
   @override
   Widget build(BuildContext context) {
     final rows = <({String label, String value})>[
-      (label: 'Species', value: species),
-      (label: 'Gender', value: gender),
+      (label: 'Species', value: species.toString()),
+      (label: 'Gender', value: gender.toString()),
       (label: 'Origin', value: origin),
       (label: 'Last location', value: location),
       (label: 'ID', value: id.toString()),
@@ -34,7 +37,7 @@ class CharacterInfoCard extends StatelessWidget {
         vertical: AppSpacing.sm,
       ),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.surface,
         borderRadius: BorderRadius.circular(AppRadius.card),
       ),
       child: Column(

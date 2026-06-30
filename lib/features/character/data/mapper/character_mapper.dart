@@ -2,7 +2,12 @@ import 'package:rick_and_morty_app/features/character/data/model/character_model
 import 'package:rick_and_morty_app/features/character/data/model/character_response_model.dart';
 import 'package:rick_and_morty_app/features/character/data/model/info_model.dart';
 import 'package:rick_and_morty_app/features/character/domain/entities/character.dart';
+import 'package:rick_and_morty_app/features/character/domain/entities/value_objects/character_id.dart';
 import 'package:rick_and_morty_app/features/character/domain/entities/pagination_info.dart';
+
+import '../../domain/entities/enums/character_gender.dart';
+import '../../domain/entities/enums/character_species.dart';
+import '../../domain/entities/enums/character_status.dart';
 
 /// Clase encargada de transformar Modelos (Data) en Entidades (Domain).
 /// 
@@ -12,12 +17,12 @@ class CharacterMapper {
   /// Convierte un [CharacterModel] en una entidad [Character].
   static Character fromModel(CharacterModel model) {
     return Character(
-      id: model.id,
+      id: CharacterId(model.id),
       name: model.name,
-      status: model.status,
-      species: model.species,
+      status: CharacterStatus.fromString(model.status),
+      species: CharacterSpecies.fromString(model.species),
       type: model.type,
-      gender: model.gender,
+      gender: CharacterGender.fromString(model.gender),
       originName: model.origin.name,
       locationName: model.location.name,
       image: model.image,

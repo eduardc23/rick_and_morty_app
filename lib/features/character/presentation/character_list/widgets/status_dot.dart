@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/constants/app_constants.dart';
+import '../../../domain/entities/enums/character_status.dart';
+import '../mappers/status_color_mapper.dart';
+
 class StatusDot extends StatelessWidget {
-  const StatusDot({super.key, required this.status, this.size = 8});
+  const StatusDot({
+    super.key,
+    required this.status,
+    this.size = AppSizes.dotSizeSmall,
+    this.colorMapper = const DefaultStatusColorMapper(),
+  });
 
-  final String status;
+  final CharacterStatus status;
   final double size;
-
-  Color _colorFor(ColorScheme colors) {
-    switch (status.toLowerCase()) {
-      case 'alive':
-        return colors.primary;
-      case 'dead':
-        return colors.error;
-      default:
-        return colors.outline;
-    }
-  }
+  final StatusColorMapper colorMapper;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,10 @@ class StatusDot extends StatelessWidget {
     return Container(
       width: size,
       height: size,
-      decoration: BoxDecoration(color: _colorFor(colors), shape: BoxShape.circle),
+      decoration: BoxDecoration(
+        color: colorMapper.map(status, colors),
+        shape: BoxShape.circle,
+      ),
     );
   }
 }

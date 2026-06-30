@@ -20,7 +20,7 @@ class CharacterInfoRow extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            width: 130,
+            width: AppSizes.infoLabelWidth,
             child: Text(
               label,
               style: TextStyle(color: colors.onSurfaceVariant),

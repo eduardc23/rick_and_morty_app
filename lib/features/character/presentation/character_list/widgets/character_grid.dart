@@ -40,10 +40,10 @@ class CharacterGrid extends StatelessWidget {
               );
             }, childCount: characters.length),
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200,
+              maxCrossAxisExtent: AppSizes.maxGridExtent,
               crossAxisSpacing: AppSpacing.md,
               mainAxisSpacing: AppSpacing.md,
-              childAspectRatio: .6,
+              childAspectRatio: AppDesignValues.characterCardAspectRatio,
             ),
           ),
         ),

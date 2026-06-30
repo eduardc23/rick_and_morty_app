@@ -9,9 +9,13 @@ part 'pagination_info.freezed.dart';
 @freezed
 abstract class PaginationInfo with _$PaginationInfo {
   const factory PaginationInfo({
+    /// Cantidad total de elementos disponibles.
     required int count,
+    /// Cantidad total de páginas disponibles.
     required int pages,
+    /// URL de la siguiente página, si existe.
     String? next,
+    /// URL de la página anterior, si existe.
     String? prev,
   }) = _PaginationInfo;
 
@@ -28,7 +32,9 @@ abstract class PaginationInfo with _$PaginationInfo {
 @freezed
 abstract class PaginatedResponse<T> with _$PaginatedResponse<T> {
   const factory PaginatedResponse({
+    /// Información sobre la paginación.
     required PaginationInfo info,
+    /// Lista de resultados de tipo [T].
     required List<T> results,
   }) = _PaginatedResponse<T>;
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../../core/constants/app_constants.dart';
 
 class CharacterDetailHeader extends StatelessWidget {
   const CharacterDetailHeader({
@@ -13,7 +14,7 @@ class CharacterDetailHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 360,
+      height: AppSizes.detailHeaderHeight,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -24,15 +25,15 @@ class CharacterDetailHeader extends StatelessWidget {
               if (loadingProgress == null) return child;
 
               return const ColoredBox(
-                color: Color(0xFFE3E3E3),
+                color: AppColors.imagePlaceholder,
                 child: Center(
-                  child: CircularProgressIndicator(strokeWidth: 2),
+                  child: CircularProgressIndicator(strokeWidth: AppSizes.strokeSmall),
                 ),
               );
             },
             errorBuilder: (context, error, stackTrace) {
               return const ColoredBox(
-                color: Color(0xFFE3E3E3),
+                color: AppColors.imagePlaceholder,
                 child: Center(
                   child: Icon(Icons.broken_image_outlined),
                 ),
@@ -48,32 +49,32 @@ class CharacterDetailHeader extends StatelessWidget {
                 end: Alignment.bottomCenter,
                 colors: [
                   Colors.transparent,
-                  Colors.black.withValues(alpha: 0.75),
+                  AppColors.black.withValues(alpha: AppDesignValues.gradientAlpha),
                 ],
                 stops: const [0.5, 1],
               ),
             ),
           ),
           Positioned(
-            top: 12,
-            left: 8,
+            top: AppSpacing.headerTop,
+            left: AppSpacing.headerLeft,
             child: SafeArea(
               bottom: false,
               child: IconButton(
-                icon: const Icon(Icons.arrow_back, color: Colors.white),
+                icon: const Icon(Icons.arrow_back, color: AppColors.white),
                 onPressed: () => Navigator.of(context).maybePop(),
               ),
             ),
           ),
           Positioned(
-            left: 20,
-            bottom: 20,
-            right: 20,
+            left: AppSpacing.headerPadding,
+            bottom: AppSpacing.headerPadding,
+            right: AppSpacing.headerPadding,
             child: Text(
               name,
               style: const TextStyle(
-                color: Colors.white,
-                fontSize: 26,
+                color: AppColors.white,
+                fontSize: AppFontSize.headlineLarge,
                 fontWeight: FontWeight.w800,
               ),
             ),

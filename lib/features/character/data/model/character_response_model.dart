@@ -9,7 +9,9 @@ part 'character_response_model.g.dart';
 @freezed
 abstract class CharacterResponseModel with _$CharacterResponseModel {
   const factory CharacterResponseModel({
+    /// Metadatos de paginación.
     required InfoModel info,
+    /// Lista de personajes devueltos.
     required List<CharacterModel> results,
   }) = _CharacterResponseModel;
 

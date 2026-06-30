@@ -16,7 +16,7 @@ class CharacterSummarySection extends StatelessWidget {
         Text(
           'Summary',
           style: TextStyle(
-            fontSize: 18,
+            fontSize: AppFontSize.titleMedium,
             fontWeight: FontWeight.w700,
             color: colors.onSurface,
           ),
@@ -26,7 +26,7 @@ class CharacterSummarySection extends StatelessWidget {
           summary,
           style: TextStyle(
             color: colors.onSurfaceVariant,
-            height: 1.4,
+            height: AppDesignValues.lineHighlightHeight,
           ),
         ),
       ],

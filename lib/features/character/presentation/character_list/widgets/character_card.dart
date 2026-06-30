@@ -17,7 +17,7 @@ class CharacterCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.surface,
           borderRadius: BorderRadius.circular(AppRadius.card),
         ),
         clipBehavior: Clip.antiAlias,
@@ -33,15 +33,15 @@ class CharacterCard extends StatelessWidget {
                   if (loadingProgress == null) return child;
 
                   return const ColoredBox(
-                    color: Color(0xFFE3E3E3),
+                    color: AppColors.imagePlaceholder,
                     child: Center(
-                      child: CircularProgressIndicator(strokeWidth: 2),
+                      child: CircularProgressIndicator(strokeWidth: AppSizes.strokeSmall),
                     ),
                   );
                 },
                 errorBuilder: (context, error, stackTrace) {
                   return const ColoredBox(
-                    color: Color(0xFFE3E3E3),
+                    color: AppColors.imagePlaceholder,
                     child: Center(
                       child: Icon(Icons.broken_image_outlined),
                     ),
@@ -50,12 +50,7 @@ class CharacterCard extends StatelessWidget {
               )
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.sm,
-                AppSpacing.sm,
-                AppSpacing.sm,
-                AppSpacing.sm,
-              ),
+              padding: const EdgeInsets.all(AppSpacing.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -65,7 +60,7 @@ class CharacterCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
-                      fontSize: 15,
+                      fontSize: AppFontSize.bodyMedium,
                       color: colors.onSurface,
                     ),
                   ),
@@ -80,7 +75,7 @@ class CharacterCard extends StatelessWidget {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: AppFontSize.bodySmall,
                             color: colors.onSurfaceVariant,
                           ),
                         ),
@@ -91,7 +86,7 @@ class CharacterCard extends StatelessWidget {
                   Text(
                     'Last location',
                     style: TextStyle(
-                      fontSize: 11,
+                      fontSize: AppFontSize.caption,
                       color: colors.onSurfaceVariant,
                     ),
                   ),
@@ -100,7 +95,7 @@ class CharacterCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: AppFontSize.bodySmall,
                       fontWeight: FontWeight.w600,
                       color: colors.onSurface,
                     ),

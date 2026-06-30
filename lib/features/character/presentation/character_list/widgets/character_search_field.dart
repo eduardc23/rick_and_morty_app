@@ -22,8 +22,8 @@ class CharacterSearchField extends StatelessWidget {
         hintText: 'Search by name',
         prefixIcon: Icon(Icons.search, color: colors.onSurfaceVariant),
         filled: true,
-        fillColor: Colors.white,
-        contentPadding: const EdgeInsets.symmetric(vertical: 14),
+        fillColor: AppColors.surface,
+        contentPadding: const EdgeInsets.symmetric(vertical: AppSpacing.searchVertical),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.searchField),
           borderSide: BorderSide.none,
