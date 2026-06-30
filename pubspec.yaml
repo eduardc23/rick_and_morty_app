@@ -1,0 +1,39 @@
+name: rick_and_morty_app
+description: "Aplicación móvil que consume la API de Rick and Morty para mostrar información detallada sobre los personajes de la serie"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # Gestión de Estado e Inyección de Dependencias (Riverpod 3)
+  flutter_riverpod: ^3.3.2
+  riverpod_annotation: ^4.0.3
+
+  # Inmutabilidad y Generación de Código
+  freezed_annotation: ^3.1.0
+
+  retrofit: ^4.9.2
+  retrofit_generator: ^10.2.7
+  dio: ^5.9.2
+  equatable: ^2.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+  # Generación de código
+  build_runner: ^2.15.0
+  riverpod_generator: ^4.0.4
+  freezed: ^3.2.3
+  json_serializable: ^6.14.0
+
+flutter:
+  uses-material-design: true
