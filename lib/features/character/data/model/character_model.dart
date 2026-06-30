@@ -3,6 +3,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'character_model.freezed.dart';
 part 'character_model.g.dart';
 
+/// Modelo de datos (DTO) para el personaje recibido de la API.
+/// 
+/// Incluye campos adicionales y estructuras anidadas (como [LocationModel])
+/// que son propias del contrato con la API externa.
 @freezed
 abstract class CharacterModel with _$CharacterModel {
   const factory CharacterModel({
@@ -23,6 +27,7 @@ abstract class CharacterModel with _$CharacterModel {
   factory CharacterModel.fromJson(Map<String, dynamic> json) => _$CharacterModelFromJson(json);
 }
 
+/// Modelo para representar la información de ubicación dentro de un personaje.
 @freezed
 abstract class LocationModel with _$LocationModel {
   const factory LocationModel({

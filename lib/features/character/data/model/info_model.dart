@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'info_model.freezed.dart';
 part 'info_model.g.dart';
 
+/// Modelo de datos para la información de paginación de la API.
 @freezed
 abstract class InfoModel with _$InfoModel {
   const factory InfoModel({

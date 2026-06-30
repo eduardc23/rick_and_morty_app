@@ -5,6 +5,7 @@ import 'info_model.dart';
 part 'character_response_model.freezed.dart';
 part 'character_response_model.g.dart';
 
+/// Modelo que representa la respuesta completa de la API al listar personajes.
 @freezed
 abstract class CharacterResponseModel with _$CharacterResponseModel {
   const factory CharacterResponseModel({
