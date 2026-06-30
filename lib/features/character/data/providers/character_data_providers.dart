@@ -1,4 +1,3 @@
-import 'package:rick_and_morty_app/core/network/dio_exception_mapper.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:rick_and_morty_app/core/providers/network_providers.dart';
 import 'package:rick_and_morty_app/features/character/data/datasource/character_api_client.dart';
@@ -13,7 +12,7 @@ part 'character_data_providers.g.dart';
 CharacterRemoteDataSource getCharacterRemoteDataSource(Ref ref) {
   final dio = ref.watch(dioProvider);
   final apiClient = CharacterApiClient(dio);
-  final exceptionMapper = DioExceptionMapper();
+  final exceptionMapper = ref.watch(dioExceptionMapperProvider);
   return CharacterRemoteDataSourceImpl(apiClient, exceptionMapper);
 }
 
